@@ -1,0 +1,38 @@
+# Tests to see if merge principles are followed between
+# the split point and the HEADS of branches only.
+> init
+<<<
++ f.txt wug.txt
+> add f.txt
+<<<
+> commit "f.txt as wug.txt"
+<<<
+> branch B1
+<<<
++ f.txt notwug.txt
+> add f.txt
+<<<
+> commit "f.txt now as notwug.txt, Master"
+<<<
++ f.txt wug3.txt
+> add f.txt
+<<<
+> commit "f.txt now as wug3.txt, Master"
+<<<
+> checkout B1
+<<<
++ f.txt wug2.txt
+> add f.txt
+<<<
+> commit "f.txt now as wug2.txt, B1"
+<<<
++ f.txt wug3.txt
+> add f.txt
+<<<
+> commit "f.txt back to wug3.txt, B1"
+<<<
+> checkout master
+<<<
+> merge B1
+<<<
+== f.txt wug.txt

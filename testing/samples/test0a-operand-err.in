@@ -1,0 +1,35 @@
+# Test commands that are very similar to valid ones
+# but have incorrect operands.
+> init gitlet
+Incorrect operands.
+<<<
+I prelude1.inc
++ f.txt wug.txt
++ g.txt notwug.txt
+> add f.txt "Message doesn't belong here."
+Incorrect operands.
+<<<
+> add f.txt
+<<<
+> commit "Message 1" "Message 2"
+Incorrect operands.
+<<<
+> commit "Added f.txt"
+<<<
+> log "This shouldn't work"
+Incorrect operands.
+<<<
+D HEADER "commit [a-f0-9]+"
+D DATE "Date: \w\w\w \w\w\w \d+ \d\d:\d\d:\d\d \d\d\d\d [-+]\d\d\d\d"
+> log
+===
+${HEADER}
+${DATE}
+Added f.txt
+
+===
+${HEADER}
+${DATE}
+initial commit
+
+<<<*

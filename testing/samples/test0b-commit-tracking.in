@@ -1,0 +1,41 @@
+# Test commit file overrides and inheritance of tracked files.
+> init
+<<<
++ one.txt a.txt
+> add one.txt
+<<<
+> commit "one"
+<<<
++ two.txt b.txt
+> add two.txt
+<<<
+> commit "one two"
+<<<
++ one.txt wug.txt
+> add one.txt
+<<<
+> commit "one* two"
+<<<
+= one.txt wug.txt
+= two.txt b.txt
++ three.txt c.txt
+> add three.txt
+<<<
+> commit "one* two three"
+<<<
++ two.txt notwug.txt
+> add two.txt
+<<<
+> commit "one* two* three"
+<<<
+= one.txt wug.txt
+= two.txt notwug.txt
+= three.txt c.txt
++ three.txt wug2.txt
+> add three.txt
+<<<
+> commit "one* two* three*"
+<<<
+= one.txt wug.txt
+= two.txt notwug.txt
+= three.txt wug2.txt
