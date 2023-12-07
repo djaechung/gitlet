@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+This is a woofy wug.
+=======
+This is not a wug.
+>>>>>>>
